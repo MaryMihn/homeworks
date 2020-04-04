@@ -27,31 +27,35 @@ class Basket {
 }
 
 class Product {
-    constructor(name, price){
+    constructor({ name, price, picture }){
         this.name = name;
         this.price = price;
+        this.picture = picture;
     }
 }
 
-let tv = new Product( "tv", 1900);
-let mobile = new Product( "mobile", 2500);
-let home = new Product( "home", 1000);
-let plate = new Product( "plate", 99);
-let glasses = new Product( "glasses", 125);
+const products = [
+    new Product({ name: 'Lemon', price: 700, picture: 'picture/lemon.jpg' }),
+    new Product({ name: 'Kumquat', price: 800, picture: 'picture/kumquat.jpg' }),
+    new Product({ name: 'Mandarin', price: 695, picture: 'picture/mandarin.jpg' }),
+    new Product({ name: 'Lime', price: 588, picture: 'picture/lime.jpg' }),
+    new Product({ name: 'Limquat', price: 945, picture: 'picture/limquat.jpg' }),
+    new Product({ name: 'Grapefruit', price: 1020, picture: 'picture/grapefruit.jpg' }),
+];
 
 let basket = new Basket("main");
-basket.addProduct(tv);
-basket.addProduct(mobile);
-basket.addProduct(home);
-basket.addProduct(plate);
-basket.addProduct(glasses);
 
-function getCheep(basket) {
-    let products = basket.getProducts();
-    return  products.filter(product => product.price < 300)
+let htmlProducts = '';
+for (let product of products) {
+    htmlProducts +=`<div class="Product">
+    <div class="name">${product.name}</div>
+    <div class="img"><img class="img" src="${product.picture}" alt="pic"></div>
+    <div class="Price">
+      <div class="priceLemon">${product.price}</div>
+      <button class="${product.name}">Buy</button>
+    </div>
+</div>`;
 }
 
-console.log(basket.getProducts());
-console.log(basket.getProduct(1));
-console.log(basket.getPrice());
-console.log(getCheep(basket));
+document.getElementById("Products").innerHTML = htmlProducts;
+ console.log( basket.getProducts())
