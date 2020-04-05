@@ -45,17 +45,30 @@ const products = [
 
 let basket = new Basket("main");
 
-let htmlProducts = '';
-for (let product of products) {
-    htmlProducts +=`<div class="Product">
-    <div class="name">${product.name}</div>
-    <div class="img"><img class="img" src="${product.picture}" alt="pic"></div>
-    <div class="Price">
-      <div class="priceLemon">${product.price}</div>
-      <button class="${product.name}">Buy</button>
+let htmlProducts = products
+  .map(({ name, picture, price }, index) => `<div class="Product">
+    <div class="name">${name}</div>
+    <div class="img"><img class="img" src="${picture}" alt="pic"></div>
+    <div class="bottom">
+      <div class="price">${price}</div>
+      <button class="buy" data-id="${index}">Buy</button>
     </div>
-</div>`;
-}
+  </div>`)
+  .join('')
 
 document.getElementById("Products").innerHTML = htmlProducts;
- console.log( basket.getProducts())
+
+Array.from(document.getElementsByClassName('buy')).forEach(element => {
+    element.addEventListener('click', ({ target }) => {
+        const id = +target.dataset.id
+        const product = products[id]
+        basket.addProduct(product)
+
+        const chosenProducts = basket.getProducts()
+
+        if (chosenProducts.length) {
+            const htmlChoice = `Products: ${chosenProducts.map(({ name }) => name).join(', ')}. Price: ${basket.getPrice()}.`
+            document.getElementById('choice').innerHTML = htmlChoice;
+        }
+    })
+})

@@ -4,7 +4,6 @@ header{
     align-items: center;
 }
 
-
 p {
     width: 62%;
     display: flex;
@@ -52,17 +51,17 @@ p {
     width: 150px;
 }
 
-.Price{
+.bottom {
     display: flex;
 }
 
-.priceLemon, .priceKumquat, .priceMandarin, .priceLime, .priceLimquat, .priceGrapefruit{
+.price {
     display: flex;
     width: 75px;
     justify-content: center;
 }
 
-.Lemon, .Kumquat, .Mandarin,.Lime, .Limquat, .Grapefruit{
+.buy {
     display: flex;
     width: 75px;
     justify-content:center;
