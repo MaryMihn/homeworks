@@ -1,35 +1,56 @@
+body{
+    background: honeydew;
+}
 header{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-}
-
-p {
-    width: 62%;
-    display: flex;
-    justify-content: flex-end;
     font-style: normal;
     font-size: 35px;
     color: darkorange;
 }
 
-.yourBasket{
-    width: 20%;
+.goods{
     display: flex;
-    justify-content: center;
+    flex-direction: row;
+    align-items: flex-start;
 }
 
-.basket{
-    height: 35px;
-    width: 100px;
+#your_choice{
+    display: block;
+    margin: 30px 30px;
+}
 
+#choice{
+    display: block;
+}
+.choosen{
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+.choosen:last-child{
+    margin-bottom: 10px;
+}
+
+.pro, .pri{
+    display: inline;
+    font-style: italic;
+    color: forestgreen;
+    font-weight: bolder;
+    text-align: center;
+}
+
+#basket{
+    height: 35px;
+    width: 150px;
+    background-color: chartreuse;
+    border-color: greenyellow;
 }
 
 .Products{
     display: flex;
     flex-wrap: wrap;
-    width: 80%;
-    margin: 0 auto;
 }
 
 .Product{
@@ -63,6 +84,31 @@ p {
 
 .buy {
     display: flex;
-    width: 75px;
+    width: 70px;
     justify-content:center;
+    background: azure;
+    border-color: aliceblue;
+}
+.remove {
+    background: tomato;
+    border-color: red;
+    margin-top: 5px;
+
+}
+.imgMini{
+    display: flex;
+    height: 75px;
+    width: 50px;
+    align-items: center;
+    margin-right: 5px;
+}
+
+.miniName{
+    display: -ms-inline-flexbox;
+
+}
+
+.miniPrice{
+   display: -ms-inline-flexbox;
+
 }
