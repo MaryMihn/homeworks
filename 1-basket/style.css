@@ -84,7 +84,7 @@ header{
 
 .buy {
     display: flex;
-    width: 75px;
+    width: 70px;
     justify-content:center;
     background: azure;
     border-color: aliceblue;
@@ -92,29 +92,23 @@ header{
 .remove {
     background: tomato;
     border-color: red;
-}
+    margin-top: 5px;
 
-.want{
-    display: flex;
-    align-items: center;
 }
-
-.youWant{
-    display: flex;
-    flex-direction: row;
-    width: 700px;
-}
-
 .imgMini{
     display: flex;
     height: 75px;
     width: 50px;
+    align-items: center;
+    margin-right: 5px;
 }
 
 .miniName{
-    display: flex;
+    display: -ms-inline-flexbox;
+
 }
 
 .miniPrice{
-    display: flex;
+   display: -ms-inline-flexbox;
+
 }
